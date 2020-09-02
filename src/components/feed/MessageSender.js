@@ -12,6 +12,9 @@ const MessageSender = () => {
 
     const handleSbmit = (e) => {
         e.preventDefault();
+
+        setInput('')
+        setImageUrl('')
     }
 
     return (
