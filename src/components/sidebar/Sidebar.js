@@ -6,11 +6,14 @@ import PeopleIcon from '@material-ui/icons/Chat'
 import StorefrontIcon from '@material-ui/icons/Storefront'
 import VideoLibraryIcon from '@material-ui/icons/VideoLibrary'
 import './Sidebar.css'
+import { useStateValue } from '../../StateProvider'
 
 const SideBar = () => {
+    const [{ user }, dispatch] = useStateValue();
+
     return (
         <div className="sidebar">
-            <SideBarRow />
+            <SideBarRow src={user.photoURL} title={user.displayName} />
             <SideBarRow Icon={EmojiFlagsIcon} title='Pages' />
             <SideBarRow Icon={PeopleIcon} title='Freinds' />
             <SideBarRow Icon={ChatIcon} title='Messanger' />

@@ -10,14 +10,15 @@ import { ExpandMoreOutlined } from '@material-ui/icons';
 
 
 const Post = ({ profilePic, image, username, timestamp, message }) => {
+    console.log(timestamp)
     return (
         <div className="post">
             <div className='post__top'>
                 <Avatar src={profilePic} className="post__avatar" />
                 <div className="post__topinfo">
                     <h3>{username}</h3>
-                    {/* <p>{new Date(timestamp?.toDate()).toUTCString()}</p> */}
-                    <p>{timestamp}</p>
+                    <p>{new Date(timestamp).toUTCString()}</p>
+                    {/* <p>{timestamp}</p> */}
                 </div>
             </div>
             <div className="post__bottom">
